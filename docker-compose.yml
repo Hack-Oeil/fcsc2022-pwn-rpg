@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  ssh.cyrhades.fr:
+    build: ssh
+  webssh.cyrhades.fr:
+    build: webssh
+    ports:
+    - ${PORT}:8888
+  rpg.cyrhades.fr:
+    image: anssi/fcsc2022-pwn-rpg:latest
+    ports:
+      - ${PORT_SSH}:4000
